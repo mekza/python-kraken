@@ -113,7 +113,7 @@ class Kraken(object):
             data['callback_url'] = callback_url
 
         headers = {
-            'User-Agent': 'kraken-python/' + version,
+            'User-Agent': 'python-kraken/' + version,
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         }

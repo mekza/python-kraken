@@ -1,4 +1,4 @@
-kraken-python
+python-kraken
 =============
 
 Official Kraken module for Python
