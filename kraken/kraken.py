@@ -84,7 +84,7 @@ class Kraken(object):
     timemout = 15
 
     @classmethod
-    def url(cls, url, wait=True, callback_url=None, quality=None, webp=False, lossy=False):
+    def url(cls, url, wait=True, callback_url=None, quality=None, webp=False, lossy=False, resize=None):
         """
         url classmethod
         returns dict
@@ -123,6 +123,9 @@ class Kraken(object):
                 KrakenException("Quality should be a number within the range of 1-100.")
             else:
                 data['quality'] = quality
+
+        if resize:
+            data['resize'] = resize
 
         headers = {
             'User-Agent': 'python-kraken/' + version,
