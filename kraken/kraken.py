@@ -86,7 +86,8 @@ class Kraken(object):
     timemout = 15
 
     @classmethod
-    def url(cls, url, wait=True, callback_url=None, quality=None, webp=False, lossy=False, resize=None, convert=None):
+    def url(cls, url, wait=True, callback_url=None, quality=None, webp=False, lossy=False, 
+        resize=None, convert=None, s3_store=None, cf_store=None, azure_store=None):
         """
         url classmethod
         returns dict
@@ -131,6 +132,15 @@ class Kraken(object):
 
         if convert:
             data['convert'] = convert
+
+        if s3_store:
+            data['s3_store'] = s3_store
+
+        if cf_store:
+            data['cf_store'] = cf_store
+
+        if azure_store:
+            data['azure_store'] = azure_store
 
         headers = {
             'User-Agent': 'python-kraken/' + version,
