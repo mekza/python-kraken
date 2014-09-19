@@ -71,7 +71,9 @@ def raise_errors_on_failure(response):
         raise BadGatewayError("Bad gateway.")
     elif response.status_code == 503:
         raise ServiceUnavailableError("Service unavailable.")
-    
+    elif response.json().has_key("success") and not response.json().get("success"):
+        raise KrakenException(response.json()['message'])
+
     return response
 
 class Kraken(object):
@@ -84,7 +86,7 @@ class Kraken(object):
     timemout = 15
 
     @classmethod
-    def url(cls, url, wait=True, callback_url=None, quality=None, webp=False, lossy=False, resize=None):
+    def url(cls, url, wait=True, callback_url=None, quality=None, webp=False, lossy=False, resize=None, convert=None):
         """
         url classmethod
         returns dict
@@ -126,6 +128,9 @@ class Kraken(object):
 
         if resize:
             data['resize'] = resize
+
+        if convert:
+            data['convert'] = convert
 
         headers = {
             'User-Agent': 'python-kraken/' + version,
