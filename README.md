@@ -1,7 +1,7 @@
 python-kraken
 =============
 
-Official Kraken module for Python
+Unofficial Kraken module for Python
 
 ## Installation
 
