@@ -17,7 +17,7 @@ setup(
     author = "Martin-Zack Mekkaoui",
     author_email = "martin@mekkaoui.fr",
     license = "MIT License",
-    url = "https://github.com/kraken-io/kraken-python/",
+    url = "https://github.com/mekza/python-kraken/",
     keywords = 'Kraken python image optimizer',
     classifiers = [],
     packages = find_packages(),
