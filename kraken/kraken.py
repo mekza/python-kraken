@@ -71,7 +71,7 @@ def raise_errors_on_failure(response):
         raise BadGatewayError("Bad gateway.")
     elif response.status_code == 503:
         raise ServiceUnavailableError("Service unavailable.")
-    elif response.json().has_key("success") and not response.json().get("success"):
+    elif response.json().get("success") and not response.json().get("success"):
         raise KrakenException(response.json()['message'])
 
     return response
