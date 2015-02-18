@@ -4,14 +4,13 @@ import re
 
 from setuptools import find_packages
 from setuptools import setup
-from kraken import Kraken
 
 with open('README.md') as readme:
     long_description = readme.read()
 
 setup(
     name = "python-kraken",
-    version = "0.0.1",
+    version = "0.0.2",
     description = "Kraken API wrapper",
     long_description = long_description,
     author = "Martin-Zack Mekkaoui",
