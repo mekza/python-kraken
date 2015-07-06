@@ -10,7 +10,7 @@ with open('README.md') as readme:
 
 setup(
     name = "python-kraken",
-    version = "0.0.2",
+    version = "0.0.3",
     description = "Kraken API wrapper",
     long_description = long_description,
     author = "Martin-Zack Mekkaoui",
