@@ -1,29 +1,34 @@
-python-kraken
-=============
+python-kraken |Build Status|
+============================
 
 Unofficial Kraken module for Python
 
-## Installation
+Installation
+------------
 
-Method with pip: if you have pip installed, just type this in a terminal (sudo is optional on some systems)
+Method with pip: if you have pip installed, just type this in a terminal
+(sudo is optional on some systems)
 
-```
-(sudo) pip install python-kraken
-```
+::
 
-Method by hand: download the sources, either on PyPI or (if you want the development version) on Github, unzip everything in one folder, open a terminal and type
+    pip install python-kraken
 
-```
-(sudo) python setup.py install
-```
+Method by hand: download the sources, either on PyPI or (if you want the
+development version) on Github, unzip everything in one folder, open a
+terminal and type
 
+::
 
-## Usage
+    python setup.py install
 
-```
->>> from kraken import Kraken
->>> Kraken.api_key = 'your-key'
->>> Kraken.api_secret = 'your-secret'
->>> Kraken.url("http://my-awesome-website.com/image.jpg", wait=True)
-```
+Usage
+-----
 
+.. code:: python
+
+    >>> from kraken import Kraken
+    >>> kr = Kraken('API_KEY', 'API_SECRET')
+    >>> kr.url("http://my-awesome-website.com/image.jpg", wait=True)
+
+.. |Build Status| image:: https://travis-ci.org/mekza/python-kraken.svg
+   :target: https://travis-ci.org/mekza/python-kraken
